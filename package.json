@@ -1,0 +1,19 @@
+{
+    "name": "iss-status",
+    "version": "1.0.0",
+    "description": "Status for ISS",
+    "main": "index.html",
+    "scripts": {
+      "start": "serve"
+    },
+    "keywords": [
+      "iss",
+      "status"
+    ],
+    "author": "Lucas Almeida de Oliveira",
+    "license": "MIT",
+    "devDependencies": {
+      "serve": "11.2.0"
+    }
+  }
+  

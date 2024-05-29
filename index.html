@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ISS Status</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+  </head>
+
+  <body>
+    <style>
+      body {
+        background-image: url("assets/14658088_5509862.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+
+      #fundodark {
+        position: fixed;
+        width: 100%;
+        height: 704px;
+        left: 0px;
+        top: 64px;
+        background: rgba(0, 0, 0, 0.7);
+      }
+    </style>
+    <div id="fundodark"></div>
+    <nav>
+      <div class="perfil">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="16" cy="16" r="16" fill="white" />
+        </svg>
+      </div>
+
+      <header>
+        <div class="center"></div>
+        <!--center-->
+        <div
+          id="pesquisa"
+          style="
+            width: 360px;
+            height: 32px;
+            background-color: rgb(51, 65, 85);
+            border-radius: 6px;
+            display: flex;
+            padding: 10px;
+            align-items: center;
+          "
+        >
+          <svg
+            id="pesquisaicon"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.9 17.3L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.146 12.3707 1.888 11.112C0.63 9.85333 0.000666667 8.316 0 6.5C0 4.68333 0.629333 3.146 1.888 1.888C3.14667 0.63 4.684 0.000666667 6.5 0C8.31667 0 9.854 0.629333 11.112 1.888C12.37 3.14667 12.9993 4.684 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L17.325 15.925C17.5083 16.1083 17.6 16.3333 17.6 16.6C17.6 16.8667 17.5 17.1 17.3 17.3C17.1167 17.4833 16.8833 17.575 16.6 17.575C16.3167 17.575 16.0833 17.4833 15.9 17.3ZM6.5 11C7.75 11 8.81267 10.5623 9.688 9.687C10.5633 8.81167 11.0007 7.74933 11 6.5C11 5.25 10.5623 4.18733 9.687 3.312C8.81167 2.43667 7.74933 1.99933 6.5 2C5.25 2 4.18733 2.43767 3.312 3.313C2.43667 4.18833 1.99933 5.25067 2 6.5C2 7.75 2.43767 8.81267 3.313 9.688C4.18833 10.5633 5.25067 11.0007 6.5 11Z"
+              fill="white"
+            />
+          </svg>
+          <p
+            style="
+              padding-left: 13px;
+              color: white;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+            "
+          >
+            Pesquisar
+          </p>
+        </div>
+
+        <!--pesquisa-->
+      </header>
+      <div
+        id="espacador"
+        style="width: 32px; height: 32px; display: flex; padding-right: 48px"
+      ></div>
+    </nav>
+    <div class="navegador">
+      <svg
+        id="setaesquerda"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16 22L6 12L16 2L17.775 3.775L9.55 12L17.775 20.225L16 22Z"
+          fill="white"
+        />
+      </svg>
+
+      <svg
+        id="pagum"
+        width="8"
+        height="17"
+        viewBox="0 0 8 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0.16 3.824C1.088 3.456 2.016 2.984 2.944 2.408C3.888 1.832 4.72 1.152 5.44 0.368H7.48V17H4.576V4.256C4.144 4.592 3.6 4.92 2.944 5.24C2.288 5.56 1.656 5.824 1.048 6.032L0.16 3.824Z"
+          fill="white"
+        />
+      </svg>
+
+      <svg
+        id="pagdois"
+        width="12"
+        height="18"
+        viewBox="0 0 12 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.544 5.688C10.544 6.264 10.424 6.832 10.184 7.392C9.944 7.936 9.632 8.472 9.248 9C8.88 9.512 8.456 10.016 7.976 10.512C7.496 10.992 7.016 11.464 6.536 11.928C6.28 12.168 5.992 12.456 5.672 12.792C5.352 13.128 5.048 13.464 4.76 13.8C4.472 14.136 4.224 14.464 4.016 14.784C3.808 15.088 3.696 15.344 3.68 15.552H11.072V18H0.488C0.472 17.872 0.464 17.72 0.464 17.544C0.464 17.352 0.464 17.208 0.464 17.112C0.464 16.344 0.584 15.64 0.824 15C1.08 14.344 1.408 13.736 1.808 13.176C2.208 12.616 2.656 12.088 3.152 11.592C3.648 11.096 4.144 10.608 4.64 10.128C5.024 9.76 5.392 9.4 5.744 9.048C6.096 8.696 6.4 8.352 6.656 8.016C6.928 7.664 7.144 7.312 7.304 6.96C7.464 6.592 7.544 6.216 7.544 5.832C7.544 5 7.304 4.408 6.824 4.056C6.344 3.704 5.76 3.528 5.072 3.528C4.624 3.528 4.208 3.592 3.824 3.72C3.44 3.848 3.096 4 2.792 4.176C2.504 4.352 2.248 4.536 2.024 4.728C1.8 4.904 1.632 5.048 1.52 5.16L0.08 3.12C0.752 2.48 1.536 1.968 2.432 1.584C3.344 1.184 4.32 0.983999 5.36 0.983999C7.136 0.983999 8.44 1.408 9.272 2.256C10.12 3.088 10.544 4.232 10.544 5.688Z"
+          fill="white"
+        />
+      </svg>
+
+      <svg
+        id="pagtres"
+        width="12"
+        height="19"
+        viewBox="0 0 12 19"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4.664 18.36C4.232 18.36 3.784 18.328 3.32 18.264C2.872 18.216 2.44 18.144 2.024 18.048C1.624 17.968 1.256 17.88 0.92 17.784C0.584 17.672 0.328 17.568 0.152 17.472L0.728 15C1.064 15.16 1.552 15.344 2.192 15.552C2.832 15.744 3.624 15.84 4.568 15.84C5.832 15.84 6.744 15.6 7.304 15.12C7.864 14.624 8.144 13.968 8.144 13.152C8.144 12.624 8.032 12.184 7.808 11.832C7.6 11.48 7.304 11.2 6.92 10.992C6.552 10.768 6.12 10.616 5.624 10.536C5.144 10.44 4.632 10.392 4.088 10.392H3.104V8.04H4.304C4.672 8.04 5.04 8.008 5.408 7.944C5.792 7.864 6.136 7.736 6.44 7.56C6.744 7.368 6.992 7.12 7.184 6.816C7.376 6.512 7.472 6.12 7.472 5.64C7.472 5.256 7.4 4.928 7.256 4.656C7.112 4.384 6.92 4.16 6.68 3.984C6.456 3.808 6.192 3.68 5.888 3.6C5.584 3.52 5.264 3.48 4.928 3.48C4.208 3.48 3.568 3.592 3.008 3.816C2.448 4.024 1.952 4.264 1.52 4.536L0.464 2.376C0.688 2.232 0.96 2.08 1.28 1.92C1.6 1.76 1.952 1.608 2.336 1.464C2.736 1.32 3.16 1.208 3.608 1.128C4.056 1.032 4.528 0.983999 5.024 0.983999C5.952 0.983999 6.752 1.096 7.424 1.32C8.096 1.544 8.648 1.864 9.08 2.28C9.528 2.68 9.856 3.16 10.064 3.72C10.288 4.264 10.4 4.864 10.4 5.52C10.4 6.288 10.184 6.976 9.752 7.584C9.336 8.192 8.792 8.656 8.12 8.976C8.984 9.28 9.696 9.784 10.256 10.488C10.832 11.192 11.12 12.096 11.12 13.2C11.12 13.936 10.992 14.624 10.736 15.264C10.48 15.888 10.088 16.432 9.56 16.896C9.032 17.344 8.36 17.704 7.544 17.976C6.744 18.232 5.784 18.36 4.664 18.36Z"
+          fill="white"
+        />
+      </svg>
+
+      <svg
+        id="setadireita"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 22L18 12L8 2L6.225 3.775L14.45 12L6.225 20.225L8 22Z"
+          fill="white"
+        />
+      </svg>
+    </div>
+    <!--navegador-->
+    <div class="rodape">
+      <a
+        href="https://br.freepik.com/vetores-gratis/fundo-gradiente-de-galaxia_14658088.htm#query=space&position=6&from_view=search&track=robertav1_2_sidr"
+        >Background por Freepik</a
+      >
+    </div>
+
+    <div
+      style="
+        width: 1184px;
+        height: 520px;
+        left: 91px;
+        top: 92px;
+        position: absolute;
+        justify-content: space-between;
+      "
+    >
+      <div
+        style="
+          width: 260px;
+          height: 249px;
+          left: 0px;
+          top: 0px;
+          position: absolute;
+        "
+      >
+        <div
+          style="
+            width: 244px;
+            height: 18px;
+            left: 8px;
+            top: 184px;
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: 500;
+            word-wrap: break-word;
+          "
+        >
+          Densidade óssea e muscular em microgravidade
+        </div>
+        <a href="densidade.html" target="_self">
+          <div
+            style="
+              width: 260px;
+              height: 171px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+            "
+          >
+            <img
+              src="assets/corpo.png"
+              style="width: 100%; height: 100%; border-radius: 6px"
+            />
+          </div>
+        </a>
+        <div
+          style="
+            width: 64px;
+            height: 17.32px;
+            left: 98px;
+            top: 231.68px;
+            position: absolute;
+          "
+        >
+          <div
+            style="
+              width: 64px;
+              height: 17.32px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+              background: #4ade80;
+              border-radius: 6px;
+            "
+          ></div>
+          <div style="width: 56px; left: 4px; top: 1.08px; position: absolute">
+            <div
+              style="
+                width: 40px;
+                height: 15.16px;
+                left: 16px;
+                top: 0px;
+                position: absolute;
+                color: white;
+                font-size: 10px;
+                font-family: Verdana;
+                font-weight: 500;
+                word-wrap: break-word;
+              "
+            >
+              intacto
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12.99px;
+                left: 0px;
+                top: 1.08px;
+                position: absolute;
+              "
+            >
+              <svg
+                width="12"
+                height="14"
+                viewBox="0 0 12 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse cx="6" cy="7.33914" rx="6" ry="6.49565" fill="white" />
+                <mask id="path-2-inside-1_1_392" fill="white">
+                  <path
+                    d="M9 5.68275L4.88571 10.0132L3 8.0284L3.48343 7.51957L4.88571 8.99192L8.51657 5.17392L9 5.68275Z"
+                  />
+                </mask>
+                <path
+                  d="M9 5.68275L4.88571 10.0132L3 8.0284L3.48343 7.51957L4.88571 8.99192L8.51657 5.17392L9 5.68275Z"
+                  fill="#4ADE80"
+                />
+                <path
+                  d="M9 5.68275L49.5982 44.2546L86.2448 5.68275L49.5982 -32.8891L9 5.68275ZM4.88571 10.0132L-35.7125 48.585L4.88571 91.3161L45.4839 48.585L4.88571 10.0132ZM3 8.0284L-37.5982 -30.5434L-74.2448 8.0284L-37.5982 46.6002L3 8.0284ZM3.48343 7.51957L44.0345 -31.1018L3.43376 -73.7311L-37.1148 -31.0522L3.48343 7.51957ZM4.88571 8.99192L-35.6653 47.6133L4.91621 90.2224L45.4657 47.5829L4.88571 8.99192ZM8.51657 5.17392L49.1148 -33.3979L8.53575 -76.1088L-32.0634 -33.417L8.51657 5.17392ZM-31.5982 -32.8891L-35.7125 -28.5586L45.4839 48.585L49.5982 44.2546L-31.5982 -32.8891ZM45.4839 -28.5586L43.5982 -30.5434L-37.5982 46.6002L-35.7125 48.585L45.4839 -28.5586ZM43.5982 46.6002L44.0817 46.0914L-37.1148 -31.0522L-37.5982 -30.5434L43.5982 46.6002ZM-37.0676 46.141L-35.6653 47.6133L45.4368 -29.6295L44.0345 -31.1018L-37.0676 46.141ZM45.4657 47.5829L49.0966 43.7649L-32.0634 -33.417L-35.6943 -29.599L45.4657 47.5829ZM-32.0817 43.7457L-31.5982 44.2546L49.5982 -32.8891L49.1148 -33.3979L-32.0817 43.7457Z"
+                  fill="#4ADE80"
+                  mask="url(#path-2-inside-1_1_392)"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          width: 260px;
+          height: 248px;
+          left: 308px;
+          top: 0px;
+          position: absolute;
+        "
+      >
+        <div
+          style="
+            width: 244px;
+            height: 18px;
+            left: 8px;
+            top: 184px;
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: 500;
+            word-wrap: break-word;
+          "
+        >
+          Materiais resistentes à radiação espacial<br />
+        </div>
+        <a href="materiais.html" target="_self">
+          <div
+            style="
+              width: 260px;
+              height: 171px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+            "
+          >
+            <img
+              src="assets/materiais.png"
+              style="width: 100%; height: 100%; border-radius: 6px"
+            />
+          </div>
+        </a>
+        <div
+          style="
+            width: 73px;
+            height: 17.25px;
+            left: 93px;
+            top: 230.75px;
+            position: absolute;
+          "
+        >
+          <div
+            style="
+              width: 73px;
+              height: 17.25px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+              background: #f87171;
+              border-radius: 6px;
+            "
+          ></div>
+          <div
+            style="
+              width: 64px;
+              height: 15.1px;
+              left: 5px;
+              top: 1.08px;
+              position: absolute;
+            "
+          >
+            <div
+              style="
+                width: 48px;
+                height: 15.1px;
+                left: 16px;
+                top: 0px;
+                position: absolute;
+                color: white;
+                font-size: 10px;
+                font-family: Verdana;
+                font-weight: 500;
+                word-wrap: break-word;
+              "
+            >
+              avariado
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12.94px;
+                left: 0px;
+                top: 1.08px;
+                position: absolute;
+              "
+            >
+              <svg
+                width="12"
+                height="14"
+                viewBox="0 0 12 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse cx="6" cy="7.37392" rx="6" ry="6.46957" fill="white" />
+                <path
+                  d="M3.6 10.6087L3 9.96175L5.4 7.37393L3 4.7861L3.6 4.13914L6 6.72697L8.4 4.13914L9 4.7861L6.6 7.37393L9 9.96175L8.4 10.6087L6 8.02088L3.6 10.6087Z"
+                  fill="#F87171"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          width: 260px;
+          height: 249px;
+          left: 0px;
+          top: 271px;
+          position: absolute;
+        "
+      >
+        <div
+          style="
+            width: 244px;
+            height: 18px;
+            left: 8px;
+            top: 184px;
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: 500;
+            word-wrap: break-word;
+          "
+        >
+          Crescimento de plantas em microgravidade
+        </div>
+        <a href="crescimento.html">
+          <div
+            style="
+              width: 260px;
+              height: 171px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+            "
+          >
+            <img
+              src="assets/plantas.png"
+              style="width: 100%; height: 100%; border-radius: 6px"
+            /></div
+        ></a>
+        <div
+          style="
+            width: 64px;
+            height: 17.32px;
+            left: 98px;
+            top: 231.68px;
+            position: absolute;
+          "
+        >
+          <div
+            style="
+              width: 64px;
+              height: 17.32px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+              background: #4ade80;
+              border-radius: 6px;
+            "
+          ></div>
+          <div style="width: 56px; left: 4px; top: 1.08px; position: absolute">
+            <div
+              style="
+                width: 40px;
+                height: 15.16px;
+                left: 16px;
+                top: 0px;
+                position: absolute;
+                color: white;
+                font-size: 10px;
+                font-family: Verdana;
+                font-weight: 500;
+                word-wrap: break-word;
+              "
+            >
+              intacto
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12.99px;
+                left: 0px;
+                top: 1.08px;
+                position: absolute;
+              "
+            >
+              <svg
+                width="12"
+                height="14"
+                viewBox="0 0 12 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse cx="6" cy="7.33914" rx="6" ry="6.49565" fill="white" />
+                <mask id="path-2-inside-1_1_392" fill="white">
+                  <path
+                    d="M9 5.68275L4.88571 10.0132L3 8.0284L3.48343 7.51957L4.88571 8.99192L8.51657 5.17392L9 5.68275Z"
+                  />
+                </mask>
+                <path
+                  d="M9 5.68275L4.88571 10.0132L3 8.0284L3.48343 7.51957L4.88571 8.99192L8.51657 5.17392L9 5.68275Z"
+                  fill="#4ADE80"
+                />
+                <path
+                  d="M9 5.68275L49.5982 44.2546L86.2448 5.68275L49.5982 -32.8891L9 5.68275ZM4.88571 10.0132L-35.7125 48.585L4.88571 91.3161L45.4839 48.585L4.88571 10.0132ZM3 8.0284L-37.5982 -30.5434L-74.2448 8.0284L-37.5982 46.6002L3 8.0284ZM3.48343 7.51957L44.0345 -31.1018L3.43376 -73.7311L-37.1148 -31.0522L3.48343 7.51957ZM4.88571 8.99192L-35.6653 47.6133L4.91621 90.2224L45.4657 47.5829L4.88571 8.99192ZM8.51657 5.17392L49.1148 -33.3979L8.53575 -76.1088L-32.0634 -33.417L8.51657 5.17392ZM-31.5982 -32.8891L-35.7125 -28.5586L45.4839 48.585L49.5982 44.2546L-31.5982 -32.8891ZM45.4839 -28.5586L43.5982 -30.5434L-37.5982 46.6002L-35.7125 48.585L45.4839 -28.5586ZM43.5982 46.6002L44.0817 46.0914L-37.1148 -31.0522L-37.5982 -30.5434L43.5982 46.6002ZM-37.0676 46.141L-35.6653 47.6133L45.4368 -29.6295L44.0345 -31.1018L-37.0676 46.141ZM45.4657 47.5829L49.0966 43.7649L-32.0634 -33.417L-35.6943 -29.599L45.4657 47.5829ZM-32.0817 43.7457L-31.5982 44.2546L49.5982 -32.8891L49.1148 -33.3979L-32.0817 43.7457Z"
+                  fill="#4ADE80"
+                  mask="url(#path-2-inside-1_1_392)"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          width: 260px;
+          height: 248px;
+          left: 308px;
+          top: 271px;
+          position: absolute;
+        "
+      >
+        <div
+          style="
+            width: 244px;
+            height: 18px;
+            left: 8px;
+            top: 184px;
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: 500;
+            word-wrap: break-word;
+          "
+        >
+          Regeneração de tecidos em microgravidade<br />
+        </div>
+        <a href="regeneração.html">
+          <div
+            style="
+              width: 260px;
+              height: 171px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+            "
+          >
+            <img
+              src="assets/tecido.png"
+              style="width: 100%; height: 100%; border-radius: 6px"
+            /></div
+        ></a>
+        <div
+          style="
+            width: 73px;
+            height: 17.25px;
+            left: 93px;
+            top: 230.75px;
+            position: absolute;
+          "
+        >
+          <div
+            style="
+              width: 73px;
+              height: 17.25px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+              background: #f87171;
+              border-radius: 6px;
+            "
+          ></div>
+          <div
+            style="
+              width: 64px;
+              height: 15.1px;
+              left: 5px;
+              top: 1.08px;
+              position: absolute;
+            "
+          >
+            <div
+              style="
+                width: 48px;
+                height: 15.1px;
+                left: 16px;
+                top: 0px;
+                position: absolute;
+                color: white;
+                font-size: 10px;
+                font-family: Verdana;
+                font-weight: 500;
+                word-wrap: break-word;
+              "
+            >
+              avariado
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12.94px;
+                left: 0px;
+                top: 1.08px;
+                position: absolute;
+              "
+            >
+              <svg
+                width="12"
+                height="14"
+                viewBox="0 0 12 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse cx="6" cy="7.37392" rx="6" ry="6.46957" fill="white" />
+                <path
+                  d="M3.6 10.6087L3 9.96175L5.4 7.37393L3 4.7861L3.6 4.13914L6 6.72697L8.4 4.13914L9 4.7861L6.6 7.37393L9 9.96175L8.4 10.6087L6 8.02088L3.6 10.6087Z"
+                  fill="#F87171"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          width: 260px;
+          height: 249px;
+          left: 616px;
+          top: 271px;
+          position: absolute;
+        "
+      >
+        <div
+          style="
+            width: 244px;
+            height: 18px;
+            left: 8px;
+            top: 184px;
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: 500;
+            word-wrap: break-word;
+          "
+        >
+          Comunicação por rádio no espaço<br />
+        </div>
+        <a href="comunicação.html">
+          <div
+            style="
+              width: 260px;
+              height: 171px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+            "
+          >
+            <img
+              src="assets/radio.png"
+              style="width: 100%; height: 100%; border-radius: 6px"
+            /></div
+        ></a>
+        <div
+          style="
+            width: 64px;
+            height: 17.32px;
+            left: 98px;
+            top: 231.68px;
+            position: absolute;
+          "
+        >
+          <div
+            style="
+              width: 64px;
+              height: 17.32px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+              background: #4ade80;
+              border-radius: 6px;
+            "
+          ></div>
+          <div style="width: 56px; left: 4px; top: 1.08px; position: absolute">
+            <div
+              style="
+                width: 40px;
+                height: 15.16px;
+                left: 16px;
+                top: 0px;
+                position: absolute;
+                color: white;
+                font-size: 10px;
+                font-family: Verdana;
+                font-weight: 500;
+                word-wrap: break-word;
+              "
+            >
+              intacto
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12.99px;
+                left: 0px;
+                top: 1.08px;
+                position: absolute;
+              "
+            >
+              <svg
+                width="12"
+                height="14"
+                viewBox="0 0 12 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse cx="6" cy="7.33914" rx="6" ry="6.49565" fill="white" />
+                <mask id="path-2-inside-1_1_392" fill="white">
+                  <path
+                    d="M9 5.68275L4.88571 10.0132L3 8.0284L3.48343 7.51957L4.88571 8.99192L8.51657 5.17392L9 5.68275Z"
+                  />
+                </mask>
+                <path
+                  d="M9 5.68275L4.88571 10.0132L3 8.0284L3.48343 7.51957L4.88571 8.99192L8.51657 5.17392L9 5.68275Z"
+                  fill="#4ADE80"
+                />
+                <path
+                  d="M9 5.68275L49.5982 44.2546L86.2448 5.68275L49.5982 -32.8891L9 5.68275ZM4.88571 10.0132L-35.7125 48.585L4.88571 91.3161L45.4839 48.585L4.88571 10.0132ZM3 8.0284L-37.5982 -30.5434L-74.2448 8.0284L-37.5982 46.6002L3 8.0284ZM3.48343 7.51957L44.0345 -31.1018L3.43376 -73.7311L-37.1148 -31.0522L3.48343 7.51957ZM4.88571 8.99192L-35.6653 47.6133L4.91621 90.2224L45.4657 47.5829L4.88571 8.99192ZM8.51657 5.17392L49.1148 -33.3979L8.53575 -76.1088L-32.0634 -33.417L8.51657 5.17392ZM-31.5982 -32.8891L-35.7125 -28.5586L45.4839 48.585L49.5982 44.2546L-31.5982 -32.8891ZM45.4839 -28.5586L43.5982 -30.5434L-37.5982 46.6002L-35.7125 48.585L45.4839 -28.5586ZM43.5982 46.6002L44.0817 46.0914L-37.1148 -31.0522L-37.5982 -30.5434L43.5982 46.6002ZM-37.0676 46.141L-35.6653 47.6133L45.4368 -29.6295L44.0345 -31.1018L-37.0676 46.141ZM45.4657 47.5829L49.0966 43.7649L-32.0634 -33.417L-35.6943 -29.599L45.4657 47.5829ZM-32.0817 43.7457L-31.5982 44.2546L49.5982 -32.8891L49.1148 -33.3979L-32.0817 43.7457Z"
+                  fill="#4ADE80"
+                  mask="url(#path-2-inside-1_1_392)"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          width: 260px;
+          height: 248px;
+          left: 616px;
+          top: 0px;
+          position: absolute;
+        "
+      >
+        <div
+          style="
+            width: 244px;
+            height: 18px;
+            left: 8px;
+            top: 184px;
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: 500;
+            word-wrap: break-word;
+          "
+        >
+          Comportamento de fluidos em microgravidade<br />
+        </div>
+        <a href="comportamento.html">
+          <div
+            style="
+              width: 260px;
+              height: 171px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+            "
+          >
+            <img
+              src="assets/fluido.png"
+              style="width: 100%; height: 100%; border-radius: 6px"
+            />
+          </div>
+        </a>
+        <div
+          style="
+            width: 73px;
+            height: 17.25px;
+            left: 93px;
+            top: 230.75px;
+            position: absolute;
+          "
+        >
+          <div
+            style="
+              width: 73px;
+              height: 17.25px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+              background: #f87171;
+              border-radius: 6px;
+            "
+          ></div>
+          <div
+            style="
+              width: 64px;
+              height: 15.1px;
+              left: 5px;
+              top: 1.08px;
+              position: absolute;
+            "
+          >
+            <div
+              style="
+                width: 48px;
+                height: 15.1px;
+                left: 16px;
+                top: 0px;
+                position: absolute;
+                color: white;
+                font-size: 10px;
+                font-family: Verdana;
+                font-weight: 500;
+                word-wrap: break-word;
+              "
+            >
+              avariado
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12.94px;
+                left: 0px;
+                top: 1.08px;
+                position: absolute;
+              "
+            >
+              <svg
+                width="12"
+                height="14"
+                viewBox="0 0 12 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse cx="6" cy="7.37392" rx="6" ry="6.46957" fill="white" />
+                <path
+                  d="M3.6 10.6087L3 9.96175L5.4 7.37393L3 4.7861L3.6 4.13914L6 6.72697L8.4 4.13914L9 4.7861L6.6 7.37393L9 9.96175L8.4 10.6087L6 8.02088L3.6 10.6087Z"
+                  fill="#F87171"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          width: 260px;
+          height: 249px;
+          left: 924px;
+          top: 0px;
+          position: absolute;
+        "
+      >
+        <div
+          style="
+            width: 244px;
+            height: 18px;
+            left: 8px;
+            top: 184px;
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: 500;
+            word-wrap: break-word;
+          "
+        >
+          Microrganismos em ambiente extremo<br />
+        </div>
+        <a href="microrganismos.html">
+          <div
+            style="
+              width: 260px;
+              height: 171px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+            "
+          >
+            <img
+              src="assets/microorganismo.png"
+              style="width: 100%; height: 100%; border-radius: 6px"
+            /></div
+        ></a>
+        <div
+          style="
+            width: 64px;
+            height: 17.32px;
+            left: 98px;
+            top: 231.68px;
+            position: absolute;
+          "
+        >
+          <div
+            style="
+              width: 64px;
+              height: 17.32px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+              background: #4ade80;
+              border-radius: 6px;
+            "
+          ></div>
+          <div style="width: 56px; left: 4px; top: 1.08px; position: absolute">
+            <div
+              style="
+                width: 40px;
+                height: 15.16px;
+                left: 16px;
+                top: 0px;
+                position: absolute;
+                color: white;
+                font-size: 10px;
+                font-family: Verdana;
+                font-weight: 500;
+                word-wrap: break-word;
+              "
+            >
+              intacto
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12.99px;
+                left: 0px;
+                top: 1.08px;
+                position: absolute;
+              "
+            >
+              <svg
+                width="12"
+                height="14"
+                viewBox="0 0 12 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse cx="6" cy="7.33914" rx="6" ry="6.49565" fill="white" />
+                <mask id="path-2-inside-1_1_392" fill="white">
+                  <path
+                    d="M9 5.68275L4.88571 10.0132L3 8.0284L3.48343 7.51957L4.88571 8.99192L8.51657 5.17392L9 5.68275Z"
+                  />
+                </mask>
+                <path
+                  d="M9 5.68275L4.88571 10.0132L3 8.0284L3.48343 7.51957L4.88571 8.99192L8.51657 5.17392L9 5.68275Z"
+                  fill="#4ADE80"
+                />
+                <path
+                  d="M9 5.68275L49.5982 44.2546L86.2448 5.68275L49.5982 -32.8891L9 5.68275ZM4.88571 10.0132L-35.7125 48.585L4.88571 91.3161L45.4839 48.585L4.88571 10.0132ZM3 8.0284L-37.5982 -30.5434L-74.2448 8.0284L-37.5982 46.6002L3 8.0284ZM3.48343 7.51957L44.0345 -31.1018L3.43376 -73.7311L-37.1148 -31.0522L3.48343 7.51957ZM4.88571 8.99192L-35.6653 47.6133L4.91621 90.2224L45.4657 47.5829L4.88571 8.99192ZM8.51657 5.17392L49.1148 -33.3979L8.53575 -76.1088L-32.0634 -33.417L8.51657 5.17392ZM-31.5982 -32.8891L-35.7125 -28.5586L45.4839 48.585L49.5982 44.2546L-31.5982 -32.8891ZM45.4839 -28.5586L43.5982 -30.5434L-37.5982 46.6002L-35.7125 48.585L45.4839 -28.5586ZM43.5982 46.6002L44.0817 46.0914L-37.1148 -31.0522L-37.5982 -30.5434L43.5982 46.6002ZM-37.0676 46.141L-35.6653 47.6133L45.4368 -29.6295L44.0345 -31.1018L-37.0676 46.141ZM45.4657 47.5829L49.0966 43.7649L-32.0634 -33.417L-35.6943 -29.599L45.4657 47.5829ZM-32.0817 43.7457L-31.5982 44.2546L49.5982 -32.8891L49.1148 -33.3979L-32.0817 43.7457Z"
+                  fill="#4ADE80"
+                  mask="url(#path-2-inside-1_1_392)"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          width: 260px;
+          height: 248px;
+          left: 924px;
+          top: 271px;
+          position: absolute;
+        "
+      >
+        <div
+          style="
+            width: 244px;
+            height: 18px;
+            left: 8px;
+            top: 184px;
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-family: Verdana;
+            font-weight: 500;
+            word-wrap: break-word;
+          "
+        >
+          Cristalização de proteínas em microgravidade
+        </div>
+        <a href="cristalização.html">
+          <div
+            style="
+              width: 260px;
+              height: 171px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+            "
+          >
+            <img
+              src="assets/proteina.png"
+              style="width: 100%; height: 100%; border-radius: 6px"
+            /></div
+        ></a>
+        <div
+          style="
+            width: 73px;
+            height: 17.25px;
+            left: 93px;
+            top: 230.75px;
+            position: absolute;
+          "
+        >
+          <div
+            style="
+              width: 73px;
+              height: 17.25px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+              background: #f87171;
+              border-radius: 6px;
+            "
+          ></div>
+          <div
+            style="
+              width: 64px;
+              height: 15.1px;
+              left: 5px;
+              top: 1.08px;
+              position: absolute;
+            "
+          >
+            <div
+              style="
+                width: 48px;
+                height: 15.1px;
+                left: 16px;
+                top: 0px;
+                position: absolute;
+                color: white;
+                font-size: 10px;
+                font-family: Verdana;
+                font-weight: 500;
+                word-wrap: break-word;
+              "
+            >
+              avariado
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12.94px;
+                left: 0px;
+                top: 1.08px;
+                position: absolute;
+              "
+            >
+              <svg
+                width="12"
+                height="14"
+                viewBox="0 0 12 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse cx="6" cy="7.37392" rx="6" ry="6.46957" fill="white" />
+                <path
+                  d="M3.6 10.6087L3 9.96175L5.4 7.37393L3 4.7861L3.6 4.13914L6 6.72697L8.4 4.13914L9 4.7861L6.6 7.37393L9 9.96175L8.4 10.6087L6 8.02088L3.6 10.6087Z"
+                  fill="#F87171"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ISS Status</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+  </head>
+
+  <body>
+    <style>
+      body {
+        background-image: url("assets/14658088_5509862.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+
+      #fundodark {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .item {
+        max-width: 562px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        color: white;
+        font-size: 16px;
+        font-family: Verdana;
+        font-weight: 400;
+        word-wrap: break-word;
+      }
+
+      .item input {
+        margin-right: 10px;
+        height: 14px;
+        width: 14px;
+        border: 2px solid white; /* Corrigido */
+        cursor: pointer;
+      }
+
+      .item div {
+        max-width: 562px;
+        word-wrap: break-word;
+      }
+      .add-item {
+        margin-top: auto;
+        height: calc(_self+32px);
+      }
+    </style>
+    <div id="fundodark"></div>
+    <nav>
+      <a href="index.html" target="_self">
+        <div class="voltar">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="16"
+              cy="16"
+              r="16"
+              fill="white"
+              style="position: absolute"
+            />
+            <image
+              href="assets/left-arrow.png"
+              width="75%"
+              height="75%"
+              x="4px"
+              y="4px"
+            />
+          </svg>
+        </div>
+      </a>
+
+      <header>
+        <div class="center"></div>
+        <!--center-->
+        <div
+          id="pesquisa"
+          style="
+            width: 360px;
+            height: 32px;
+            background-color: rgb(51, 65, 85);
+            border-radius: 6px;
+            display: flex;
+            padding: 10px;
+            align-items: center;
+          "
+        >
+          <svg
+            id="pesquisaicon"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.9 17.3L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.146 12.3707 1.888 11.112C0.63 9.85333 0.000666667 8.316 0 6.5C0 4.68333 0.629333 3.146 1.888 1.888C3.14667 0.63 4.684 0.000666667 6.5 0C8.31667 0 9.854 0.629333 11.112 1.888C12.37 3.14667 12.9993 4.684 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L17.325 15.925C17.5083 16.1083 17.6 16.3333 17.6 16.6C17.6 16.8667 17.5 17.1 17.3 17.3C17.1167 17.4833 16.8833 17.575 16.6 17.575C16.3167 17.575 16.0833 17.4833 15.9 17.3ZM6.5 11C7.75 11 8.81267 10.5623 9.688 9.687C10.5633 8.81167 11.0007 7.74933 11 6.5C11 5.25 10.5623 4.18733 9.687 3.312C8.81167 2.43667 7.74933 1.99933 6.5 2C5.25 2 4.18733 2.43767 3.312 3.313C2.43667 4.18833 1.99933 5.25067 2 6.5C2 7.75 2.43767 8.81267 3.313 9.688C4.18833 10.5633 5.25067 11.0007 6.5 11Z"
+              fill="white"
+            />
+          </svg>
+          <p
+            style="
+              padding-left: 13px;
+              color: white;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+            "
+          >
+            Pesquisar
+          </p>
+        </div>
+
+        <!--pesquisa-->
+      </header>
+      <div
+        id="espacador"
+        style="width: 32px; height: 32px; display: flex; padding-right: 48px"
+      ></div>
+    </nav>
+    <div
+      style="width: 100%; height: 100%; position: relative; background: white"
+    >
+      <div
+        style="
+          width: 1184px;
+          left: 48px;
+          top: 31px;
+          position: absolute;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 32px;
+          display: inline-flex;
+        "
+      >
+        <img
+          src="assets/proteina.png"
+          width="590px"
+          height="520px"
+          style="border-radius: 8px"
+        />
+        <div
+          style="
+            width: 562px;
+            height: 520px;
+            position: relative;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            display: flex;
+          "
+        >
+          <div
+            style="
+              width: 564px;
+              color: white;
+              font-size: 35px;
+              font-family: Verdana;
+              font-weight: 700;
+              word-wrap: break-word;
+            "
+          >
+            Cristalização de proteínas em microgravidade
+          </div>
+          <div style="width: 75px; height: 17.25px; position: relative">
+            <div
+              style="
+                width: 75px;
+                height: 17.25px;
+                left: 0px;
+                top: 16px;
+                position: absolute;
+                background: #f87171;
+                border-radius: 6px;
+              "
+            >
+              <div
+                style="
+                  width: 65.75px;
+                  height: 15.1px;
+                  left: 5.14px;
+                  top: 1.08px;
+                  position: absolute;
+                "
+              >
+                <div
+                  style="
+                    width: 49.32px;
+                    height: 15.1px;
+                    left: 16.44px;
+                    top: auto;
+                    position: absolute;
+                    color: white;
+                    font-size: 10px;
+                    font-family: Verdana;
+                    font-weight: 500;
+                    word-wrap: break-word;
+                  "
+                >
+                  avariado
+                </div>
+                <div
+                  style="
+                    width: 12.33px;
+                    height: 12.94px;
+                    left: 0px;
+                    top: auto;
+                    position: absolute;
+                  "
+                >
+                  <svg
+                    width="12"
+                    height="14"
+                    viewBox="0 0 12 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <ellipse
+                      cx="6"
+                      cy="7.37392"
+                      rx="6"
+                      ry="6.46957"
+                      fill="white"
+                    />
+                    <path
+                      d="M3.6 10.6087L3 9.96175L5.4 7.37393L3 4.7861L3.6 4.13914L6 6.72697L8.4 4.13914L9 4.7861L6.6 7.37393L9 9.96175L8.4 10.6087L6 8.02088L3.6 10.6087Z"
+                      fill="#F87171"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            style="width: 71px; height: 49px; transform: translateY(32px)"
+            src="assets/brasil.png"
+          />
+          <div
+            style="
+              position: absolute;
+              width: 562px;
+              height: 0px;
+              left: calc(50% - 562px / 2);
+              top: 210px;
+              border: 1px solid rgba(161, 161, 170, 0.6);
+              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            "
+          ></div>
+          <div style="height: 104px; top: 80px; position: relative">
+            <div
+              style="
+                width: 562px;
+                left: 0px;
+                top: 32px;
+                position: absolute;
+                color: white;
+                font-size: 16px;
+                font-family: Verdana;
+                font-weight: 400;
+                word-wrap: break-word;
+              "
+            >
+              Este experimento tem como objetivo explorar o processo de
+              cristalização de proteínas em um ambiente de microgravidade, como
+              o encontrado na Estação Espacial Internacional (ISS). A pesquisa
+              se concentra em entender como a ausência de gravidade influencia a
+              formação e qualidade dos cristais de proteína.
+            </div>
+            <div
+              style="
+                left: 0px;
+                top: 0px;
+                position: absolute;
+                color: white;
+                font-size: 14px;
+                font-family: Verdana;
+                font-weight: 500;
+                word-wrap: break-word;
+              "
+            >
+              Descrição
+            </div>
+          </div>
+          <div
+            style="
+              position: absolute;
+              width: 562px;
+              height: 0px;
+              top: 378px;
+              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+              border: 1px rgba(161, 161, 170, 0.6) solid;
+            "
+          ></div>
+          <div
+            style="
+              position: absolute;
+              top: 390px;
+              color: white;
+              font-size: 14px;
+              font-family: Verdana;
+              font-weight: 500;
+              word-wrap: break-word;
+            "
+          >
+            Passo a passo para o reparo
+          </div>
+          <div
+            style="
+              width: 562px;
+              height: calc(_self+50px);
+              position: absolute;
+              top: 422px;
+            "
+          >
+            <div id="checklist" style="height: calc(100%+24px)">
+              <!--Itens do checklist-->
+              <footer style="z-index: 2; position: relative">
+                <div class="rodape" style="transform: translateX(-49%)">
+                  <a
+                    href="https://br.freepik.com/vetores-gratis/fundo-gradiente-de-galaxia_14658088.htm#query=space&position=6&from_view=search&track=robertav1_2_sidr"
+                    >Background por Freepik</a
+                  >
+                </div>
+              </footer>
+            </div>
+            <div
+              class="add-item"
+              style="width: 560px; height: 48px; position: absolute"
+            >
+              <input
+                type="text"
+                id="newItemInput"
+                placeholder="Adicionar novo item..."
+              />
+              <button onclick="addItem();">Adicionar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function addItem() {
+        var input = document.getElementById("newItemInput");
+        var newItem = document.createElement("div");
+        newItem.innerHTML =
+          '<div class="item"><div style:"width: 16px; height: 16px; left: 0px; top: 1px; position: absolute; border: 2px white solid"></div><input type="checkbox"><div>' +
+          input.value +
+          "</div></div>";
+        document.getElementById("checklist").appendChild(newItem);
+        input.value = "";
+        window.scrollTo(0, document.body.scrollHeight);
+      }
+    </script>
+  </body>
+</html>
